@@ -1,10 +1,10 @@
-# hardhat-arbitrum
+# hardhat-zksync
 
-Hardhat plugin for Arbitrum Developers.
+Hardhat plugin for zksync Developers.
 
 ## Features
 
-ArbitrumScan Contract Verification
+zksyncScan Contract Verification
 
 ## Prerequisites
 
@@ -21,19 +21,19 @@ Make sure to have dependencies installed!
 Use the following command to install
 
 ```bash
-npm i hardhat-arbitrum --save-dev
+npm i hardhat-zksync --save-dev
 ```
 
 Import the plugin in your `hardhat.config.js`:
 
 ```js
-require("hardhat-arbitrum");
+require("hardhat-zksync");
 ```
 
 Or if you are using TypeScript, in your `hardhat.config.ts`:
 
 ```ts
-import "hardhat-arbitrum";
+import "hardhat-zksync";
 ```
 
 Remove / Comment the import for `@nomicfoundation/hardhat-toolbox`
@@ -42,15 +42,15 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
 
 ```js
 networks: {
-        arbitrumGoerli: {
+        zksyncGoerli: {
             // can be replaced with the RPC url of your choice.
-            url: "https://goerli-rollup.arbitrum.io/rpc",
+            url: "https://goerli-rollup.zksync.io/rpc",
             accounts: [
                 "<YOUR_PRIVATE_KEY>"
             ],
         },
-        arbitrumOne: {
-            url: "https://arb1.arbitrum.io/rpc",
+        zksyncOne: {
+            url: "https://arb1.zksync.io/rpc",
             accounts: [
                 "<YOUR_PRIVATE_KEY>"
             ],
@@ -58,22 +58,22 @@ networks: {
     },
     etherscan: {
         apiKey: {
-            arbitrumGoerli: "<OPTIMISMSCAN_API_KEY>",
-            arbitrumOne: "<OPTIMISMSCAN_API_KEY>"
+            zksyncGoerli: "<OPTIMISMSCAN_API_KEY>",
+            zksyncOne: "<OPTIMISMSCAN_API_KEY>"
         },
     },
 ```
 
 Verify your contracts using the following command (Make sure your contracts are compiled before verification)
 
-Arbitrum Goerli Testnet
+zksync Goerli Testnet
 
 ```bash
-npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network arbitrumGoerli
+npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network zksyncGoerli
 ```
 
-Arbitrum Mainnet
+zksync Mainnet
 
 ```bash
-npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network arbitrumOne
+npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network zksyncOne
 ```
